@@ -4,11 +4,11 @@ LIC_FILES_CHKSUM = "file://${COMMON_LICENSE_DIR}/MIT;md5=0835ade698e0bcf8506ecda
 
 # TODO: Set this  with the path to your assignments rep.  Use ssh protocol and see lecture notes
 # about how to setup ssh-agent for passwordless access
-SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-cchoi22915.git;protocol=ssh;branch=master"
+SRC_URI = "git://git@github.com/cu-ecen-aeld/assignments-3-and-later-cchoi22915;protocol=ssh;branch=main"
 
 PV = "1.0+git${SRCPV}"
 # TODO: set to reference a specific commit hash in your assignment repo
-SRCREV = "e7df15a87877747afdf3dc97ad3d2af105139e50"
+SRCREV = "b28f7229ad634d1777d96723c79adb59fa3c3e3c"
 
 # This sets your staging directory based on WORKDIR, where WORKDIR is defined at 
 # https://www.yoctoproject.org/docs/latest/ref-manual/ref-manual.html#var-WORKDIR
@@ -42,7 +42,6 @@ do_install () {
 	# and
 	# https://www.yoctoproject.org/docs/latest/ref-manual/ref-manual.html#var-S
 	# See example at https://github.com/cu-ecen-aeld/ecen5013-yocto/blob/ecen5013-hello-world/meta-ecen5013/recipes-ecen5013/ecen5013-hello-world/ecen5013-hello-world_git.bb
-	
 	install -d ${D}${bindir}
 	install -m 0755 ${S}/aesdsocket ${D}${bindir}/
 	install -d ${D}${sysconfdir}/init.d
